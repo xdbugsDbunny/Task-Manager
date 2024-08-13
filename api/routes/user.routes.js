@@ -22,6 +22,6 @@ router.route("/logout").post(verifyJWT, logoutUser, errorHandler);
 
 router.route("/get-user").post(verifyJWT, getUserById, errorHandler);
 
-router.post("/check-auth", verifyJWT, checkAuth, errorHandler);
+router.route("/check-auth").post(verifyJWT, checkAuth, errorHandler);
 
 export default router;
