@@ -23,7 +23,7 @@ const options = {
   httpOnly: true, // Prevents JavaScript access to cookies
   // secure: process.env.NODE_ENV === 'production',  // Ensures cookies are only sent over HTTPS in production
   secure: true,
-  sameSite: "strict", // Prevents CSRF attacks
+  // sameSite: "strict", // Prevents CSRF attacks
 };
 
 const registerUser = asyncHandler(async (req, res) => {
