@@ -13,11 +13,13 @@ import Home from "./Pages/Home";
 import CreateTask from "./Pages/CreateTask";
 import UpdateTask from "./Pages/UpdateTask";
 
-function App() {
-  const { loading } = useSelector((state) => state.alerts);
-  
+
   axios.defaults.baseURL = "https://task-manager-swart-pi.vercel.app";
   axios.defaults.withCredentials = true;
+
+
+function App() {
+  const { loading } = useSelector((state) => state.alerts);
 
   return (
     <BrowserRouter>
