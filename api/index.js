@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://task-manager-black-one.vercel.app/",
+    origin: "https://task-manager-black-one.vercel.app",
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization", "other-header"],
   })
