@@ -31,7 +31,7 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const location = useLocation();
-  const shouldRenderLinks = location.pathname !== "/auth";
+  const shouldRenderLinks = location.pathname !== "/";
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.user);
 

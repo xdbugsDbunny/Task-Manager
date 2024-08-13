@@ -31,7 +31,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route
-          path="/auth"
+          path="/"
           element={
             <PublicRoutes>
               <Authentication />
