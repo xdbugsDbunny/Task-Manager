@@ -14,7 +14,8 @@ import CreateTask from "./Pages/CreateTask";
 import UpdateTask from "./Pages/UpdateTask";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "https://task-manager-front-xi.vercel.app";
+// axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.withCredentials = true;
 
 function App() {
