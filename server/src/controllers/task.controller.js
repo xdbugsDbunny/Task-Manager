@@ -43,7 +43,7 @@ const getTasks = asyncHandler(async (req, res) => {
   const tasks = await Task.find({ userId: req.user._id }).select("-__v");
 
   if (!tasks || tasks.length === 0) {
-    throw new ApiError(404, "No Tasks Found For The User");
+    new ApiResponse(200, "No Tasks Found For The User");
   }
 
   return res
@@ -160,9 +160,15 @@ const filterTasks = asyncHandler(async (req, res) => {
 
   if (status) filter.status = status;
   if (priority) filter.priority = priority;
+
   if (dueDate) {
-    const parsedDueDate = new Date(dueDate).toISOString();
-    filter.dueDate = { $lte: parsedDueDate };
+    const startOfDay = new Date(
+      new Date(dueDate).setHours(0, 0, 0, 0)
+    ).toISOString();
+    const endOfDay = new Date(
+      new Date(dueDate).setHours(23, 59, 59, 999)
+    ).toISOString();
+    filter.dueDate = { $gte: startOfDay, $lte: endOfDay };
   }
 
   const tasks = await Task.find(filter).select("-__v");
