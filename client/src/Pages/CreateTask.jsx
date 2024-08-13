@@ -46,7 +46,7 @@ const CreateTask = () => {
       };
 
       const response = await axios.post(
-        `https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/task/`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/task/`,
         newTask
       );
 
