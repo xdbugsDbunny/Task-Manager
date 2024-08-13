@@ -11,7 +11,7 @@ const PublicRoutes = ({ children }) => {
     const checkAuth = async () => {
       try {
         const response = await axios.post(
-          "/api/v1/user/check-auth",
+          `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/check-auth`,
           {},
           {
             withCredentials: true,

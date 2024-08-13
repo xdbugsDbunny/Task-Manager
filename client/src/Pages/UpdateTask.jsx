@@ -32,7 +32,9 @@ const UpdateTask = () => {
   useEffect(() => {
     const fetchTaskDetails = async () => {
       try {
-        const { data } = await axios.get(`/api/v1/task/${taskId}`);
+        const { data } = await axios.get(
+          `${import.meta.env.VITE_API_BASE_URL}/api/v1/task/${taskId}`
+        );
         setTitle(data.data.title);
         setDescription(data.data.description);
         setSelectedDate(new Date(data.data.dueDate));

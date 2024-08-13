@@ -45,7 +45,10 @@ const CreateTask = () => {
         status: "PENDING",
       };
 
-      const response = await axios.post("/api/v1/task/", newTask);
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/task/`,
+        newTask
+      );
 
       toast({
         title: "Task created successfully.",

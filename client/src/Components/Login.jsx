@@ -43,12 +43,16 @@ const Login = () => {
     console.log(loginData);
     try {
       dispatch(showLoading());
-      const response = await axios.post("/api/v1/user/login", loginData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/login`,
+        loginData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
       dispatch(hideLoading());
 
       if (response.data.success) {

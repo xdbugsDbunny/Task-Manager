@@ -4,7 +4,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 
 import "../App.css";
-import { setUser } from "../redux/userReducer";
+import { setUser } from "../Redux/userReducer";
 
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -16,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
   const getUser = async () => {
     try {
       const response = await axios.post(
-        "/api/v1/user/get-user",
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/get-user`,
         {},
         {
           withCredentials: true,
@@ -42,7 +42,7 @@ const ProtectedRoute = ({ children }) => {
     const checkAuth = async () => {
       try {
         const response = await axios.post(
-          "/api/v1/user/check-auth",
+          `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/check-auth`,
           {},
           {
             withCredentials: true,
