@@ -6,7 +6,7 @@
       "dest": "/index.js",
       "methods": ["GET", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
       "headers": {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "https://task-manager-black-one.vercel.app"
       }
     }
   ]
