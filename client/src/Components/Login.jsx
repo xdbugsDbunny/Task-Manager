@@ -50,7 +50,7 @@ const Login = () => {
         withCredentials: true,
       });
       dispatch(hideLoading());
-      
+
       if (response.data.success) {
         toast.success(response.data.message);
         navigate("/home");
