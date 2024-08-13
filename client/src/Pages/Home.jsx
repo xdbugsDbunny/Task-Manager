@@ -32,7 +32,7 @@ const Home = () => {
     const getAllTasks = async () => {
       dispatch(showLoading());
       try {
-        const response = await axios.get(`/api/v1/task/`);
+        const response = await axios.get(`https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/task/`);
 
         setTasks(response.data.data);
         dispatch(hideLoading());
@@ -58,7 +58,7 @@ const Home = () => {
   const handleDelete = async (taskId) => {
     dispatch(showLoading());
     try {
-      await axios.delete(`/api/v1/task/${taskId}`);
+      await axios.delete(`https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/task/${taskId}`);
       setTasks(tasks.filter((task) => task._id !== taskId));
       dispatch(hideLoading());
       toast.success("Task deleted successfully.");
@@ -80,7 +80,7 @@ const Home = () => {
 
     dispatch(showLoading());
     try {
-      const response = await axios.patch(`/api/v1/task/${taskId}/status`, {
+      const response = await axios.patch(`https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/task/${taskId}/status`, {
         status: newStatus,
       });
 

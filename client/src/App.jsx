@@ -16,8 +16,8 @@ import UpdateTask from "./Pages/UpdateTask";
 function App() {
   const { loading } = useSelector((state) => state.alerts);
   
-  axios.defaults.baseURL = "https://task-manager-swart-pi.vercel.app";
-  axios.defaults.withCredentials = true;
+  // axios.defaults.baseURL = "https://task-manager-swart-pi.vercel.app";
+  // axios.defaults.withCredentials = true;
 
   return (
     <BrowserRouter>

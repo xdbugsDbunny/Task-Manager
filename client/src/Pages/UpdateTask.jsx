@@ -34,7 +34,7 @@ const UpdateTask = () => {
     const fetchTaskDetails = async () => {
       try {
         const { data } = await axios.get(
-          `/api/v1/task/${taskId}`
+          `https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/task/${taskId}`
         );
         setTitle(data.data.title);
         setDescription(data.data.description);
@@ -80,7 +80,7 @@ const UpdateTask = () => {
         status: "PENDING",
       };
 
-      await axios.put(`/api/v1/task/${taskId}`, updatedTask);
+      await axios.put(`https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/task/${taskId}`, updatedTask);
 
       toast({
         title: "Task updated successfully.",

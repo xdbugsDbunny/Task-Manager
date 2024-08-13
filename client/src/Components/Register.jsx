@@ -52,7 +52,7 @@ const Register = () => {
     try {
       dispatch(showLoading());
 
-      const response = await axios.post(`/api/v1/user/register`, registerData, {
+      const response = await axios.post(`https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/user/register`, registerData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

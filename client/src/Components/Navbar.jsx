@@ -38,7 +38,7 @@ const Navbar = () => {
   const logout = async () => {
     try {
       const response = await axios.post(
-        `/api/v1/user/logout`,
+        `https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/user/logout`,
         {},
         {
           withCredentials: true,

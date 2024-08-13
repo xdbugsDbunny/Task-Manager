@@ -16,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
   const getUser = async () => {
     try {
       const response = await axios.post(
-        `/api/v1/user/get-user`,
+        `https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/user/get-user`,
         {},
         {
           withCredentials: true,
@@ -42,7 +42,7 @@ const ProtectedRoute = ({ children }) => {
     const checkAuth = async () => {
       try {
         const response = await axios.post(
-          `/api/v1/user/check-auth`,
+          `https://task-manager-iyykoxpat-xdbugsdbunnys-projects.vercel.app/api/v1/user/check-auth`,
           {},
           {
             withCredentials: true,
