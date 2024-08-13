@@ -40,25 +40,21 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(loginData);
     try {
       dispatch(showLoading());
-      const response = await axios.post(
-        `/api/v1/user/login`,
-        loginData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
+      const response = await axios.post(`/api/v1/user/login`, loginData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      });
       dispatch(hideLoading());
 
       if (response.data.success) {
         toast.success(response.data.message);
         navigate("/home");
       }
+      // console.log();
     } catch (error) {
       dispatch(hideLoading());
       toast.error(error.response.data.message);
