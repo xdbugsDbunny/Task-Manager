@@ -52,7 +52,7 @@ const Register = () => {
     try {
       dispatch(showLoading());
 
-      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/register`, registerData, {
+      const response = await axios.post(`/api/v1/user/register`, registerData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

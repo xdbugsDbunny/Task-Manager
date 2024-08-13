@@ -12,6 +12,10 @@ import PublicRoutes from "./Components/PublicRoutes";
 import Home from "./Pages/Home";
 import CreateTask from "./Pages/CreateTask";
 import UpdateTask from "./Pages/UpdateTask";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.withCredentials = true;
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);
