@@ -47,7 +47,7 @@ const Navbar = () => {
 
       if (response.status === 200) {
         toast.success("User Logged Out");
-        navigate("/auth");
+        navigate("/");
       } else {
         toast.error("Logout Failed");
       }
