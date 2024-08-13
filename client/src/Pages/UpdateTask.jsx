@@ -26,6 +26,7 @@ const UpdateTask = () => {
   const [description, setDescription] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const [priority, setPriority] = useState("");
+  const [loading, setLoading] = useState(true);
   const toast = useToast();
   const navigate = useNavigate();
 
@@ -39,6 +40,7 @@ const UpdateTask = () => {
         setDescription(data.data.description);
         setSelectedDate(new Date(data.data.dueDate));
         setPriority(data.data.priority);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching task details:", error);
         toast({
@@ -48,11 +50,12 @@ const UpdateTask = () => {
           duration: 3000,
           isClosable: true,
         });
+        setLoading(false);
       }
     };
 
     fetchTaskDetails();
-  }, [taskId]);
+  }, [taskId, toast]);
 
   const handleNavigate = () => {
     navigate("/home");
@@ -96,6 +99,14 @@ const UpdateTask = () => {
       });
     }
   };
+
+  if (loading) {
+    return (
+      <Container centerContent>
+        <Spinner size="xl" />
+      </Container>
+    );
+  }
 
   return (
     <Container maxW="xl" centerContent>

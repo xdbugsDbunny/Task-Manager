@@ -71,6 +71,13 @@ const Home = () => {
 
   const handleChangeStatus = async (taskId, currentStatus) => {
     const newStatus = currentStatus === "PENDING" ? "COMPLETED" : "PENDING";
+    const checkStatuses = ["PENDING", "COMPLETED"];
+
+    if (!checkStatuses.includes(newStatus)) {
+      toast.error("Invalid status change attempted.");
+      return;
+    }
+
     dispatch(showLoading());
     try {
       const response = await axios.patch(`${import.meta.env.VITE_API_BASE_URL}/api/v1/task/${taskId}/status`, {
@@ -204,7 +211,7 @@ const Home = () => {
                 mr={2}
                 aria-label="Edit task"
                 bg={"yellow.400"}
-                color={"gray.dark"}
+                color={'gray.dark'}
               />
               <IconButton
                 icon={<DeleteIcon />}
@@ -212,7 +219,7 @@ const Home = () => {
                 mr={2}
                 aria-label="Delete task"
                 bg={"red.400"}
-                color={"gray.dark"}
+                color={'gray.dark'}
               />
               <Button
                 leftIcon={<CheckIcon />}
