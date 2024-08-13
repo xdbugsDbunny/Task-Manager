@@ -21,7 +21,7 @@ const CreateTask = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
-  const [priority, setPriority] = useState("");
+  const [priority, setPriority] = useState("medium");
   const toast = useToast();
   const navigate = useNavigate();
 
@@ -45,10 +45,7 @@ const CreateTask = () => {
         status: "PENDING",
       };
 
-      const response = await axios.post(
-        `/api/v1/task/`,
-        newTask
-      );
+      const response = await axios.post(`/api/v1/task/`, newTask);
 
       toast({
         title: "Task created successfully.",
@@ -133,6 +130,7 @@ const CreateTask = () => {
               variant="outline"
               value={priority}
               onChange={(e) => setPriority(e.target.value)}
+              placeholder="Select Priority"
             >
               <option value="low">Low</option>
               <option value="medium">Medium</option>
