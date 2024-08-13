@@ -34,4 +34,8 @@ import taskRouter from "./routes/task.routes.js";
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/task", taskRouter);
 
+app.get("/", (req, res) => {
+  res.send("Working");
+});
+
 export { app };
