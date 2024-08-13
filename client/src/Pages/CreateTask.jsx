@@ -46,7 +46,7 @@ const CreateTask = () => {
       };
 
       const response = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/task/`,
+        `/api/v1/task/`,
         newTask
       );
 

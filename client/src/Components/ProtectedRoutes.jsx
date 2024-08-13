@@ -16,7 +16,7 @@ const ProtectedRoute = ({ children }) => {
   const getUser = async () => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/get-user`,
+        `/api/v1/user/get-user`,
         {},
         {
           withCredentials: true,
@@ -42,7 +42,7 @@ const ProtectedRoute = ({ children }) => {
     const checkAuth = async () => {
       try {
         const response = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/check-auth`,
+          `/api/v1/user/check-auth`,
           {},
           {
             withCredentials: true,

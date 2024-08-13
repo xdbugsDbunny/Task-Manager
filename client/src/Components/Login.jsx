@@ -44,7 +44,7 @@ const Login = () => {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/login`,
+        `/api/v1/user/login`,
         loginData,
         {
           headers: {

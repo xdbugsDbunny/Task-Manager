@@ -34,7 +34,7 @@ const UpdateTask = () => {
     const fetchTaskDetails = async () => {
       try {
         const { data } = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/v1/task/${taskId}`
+          `/api/v1/task/${taskId}`
         );
         setTitle(data.data.title);
         setDescription(data.data.description);

@@ -6,8 +6,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://task-manager-il3t.vercel.app/"],
-    credentials: true
+    origin: process.env.CORS_ORIGIN,
+    // credentials: true,
   })
 );
 
